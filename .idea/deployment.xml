@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@202.197.96.191:2347 key" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="2347">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tucker_compress" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@202.197.96.191:2347 key">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/oyyd/tucker_compress" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@dev.cnsunet.com:2347 key">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/oyyd/tucker_compress" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="xuke@dev.cnsunet.com:2422 key">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="校内2347">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

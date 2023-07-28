@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="63698fad-651f-40d0-812e-6b3c119f95ac" name="2347">
+        <fileTransfer rootFolder="/root/oyyd" accessType="SFTP" host="dev.cnsunet.com" port="2347" sshConfigId="ecfca35c-bdaf-4576-81a2-d86a88efb599" sshConfig="root@dev.cnsunet.com:2347 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="7737d724-02cb-4cb7-ac68-641380023699" name="校内2347">
+        <fileTransfer rootFolder="/root/oyyd" accessType="SFTP" host="202.197.96.191" port="2347" sshConfigId="32d1944d-93ad-4fde-87f1-69e1e3c24de8" sshConfig="root@202.197.96.191:2347 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
