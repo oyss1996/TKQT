@@ -5,12 +5,11 @@ from tensorly.tenalg import multi_mode_dot
 
 import warnings
 warnings.filterwarnings("ignore")
-# 禁用Optuna的输出
 optuna.logging.set_verbosity(optuna.logging.CRITICAL)
 
 
 class BayeOpt(object):
-    def __init__(self, shape, n_trials):    # tensor shape list
+    def __init__(self, shape, n_trials):
         self.shape = shape
         self.n_trials = n_trials
         self.data_size = np.prod(shape)
@@ -64,22 +63,19 @@ class BayeOpt(object):
 
         score = self.validation_loss(rank0, rank1, rank2, rank3)
 
-        # Final output score
         return score
 
     def optimizer_optuna(self, n_trials):
-        # 要使用的具体算法默认"TPE"，优化的方向默认"minimize"
+        # Default algorithm "TPE", default optimization direction "minimize"
         study = optuna.create_study(pruner=optuna.pruners.PatientPruner(optuna.pruners.MedianPruner(), patience=10))
 
-        # 开始优化，n_trials为允许的最大迭代次数
-        # 由于参数空间已经在目标函数中定义好，因此不需要输入参数空间
-        study.optimize(self.optuna_objective  # 目标函数
-                       , n_trials=n_trials  # 最大迭代次数（包括最初的观测值的）
-                       , show_progress_bar=False  # 要不要展示进度条呀？
+        # Start optimization
+        study.optimize(self.optuna_objective    # objective function
+                       , n_trials=n_trials      # Maximum number of trials
                        )
 
-        # 可直接从优化好的对象study中调用优化的结果
-        # 打印最佳参数与最佳损失值
+        # Optimized results can be called directly from the optimized object study
+        # Print the optimal parameters with the best loss values
         # print("\n", "\n", "best params: ", study.best_trial.params,
         #       "\n", "\n", "best score: ", study.best_trial.values,
         #       "\n")
