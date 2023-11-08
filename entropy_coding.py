@@ -2,6 +2,7 @@ import numpy as np
 
 
 def run_length_encoding(data):
+    # data += 65  # [0, 32) -> [65, 97) -> [A, `]
     data += 63  # [0, 64) -> [63, 127) -> [?,@,A_Z,...,a_z,..]
     rle = []
     count = 1
@@ -37,6 +38,22 @@ def run_length_decoding(code):
             data.append(ord(char)-63)
         i += 1
     return np.asarray(data)
+
+
+def run_length_encoding_bit(data):      # bit码流的游程编码
+    rle = []
+    if data[0] == '0': rle.append('0')   # 如果第一个bit不是1的话，则记下0，表示有0个1
+    count = 1
+    for i in range(1, len(data)):
+        if data[i] == data[i - 1]:
+            count += 1
+        else:
+            rle.append(str(count))
+            count = 1
+    rle.append(str(count))
+    return ' '.join(rle)
+
+
 
 
 """
